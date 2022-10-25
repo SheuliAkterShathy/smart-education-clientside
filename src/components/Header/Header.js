@@ -65,10 +65,10 @@ const Header = () => {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-white hover:text-indigo-200">
-                                <NavLink to="">Home</NavLink>
+                                <NavLink to="/">Home</NavLink>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <NavLink to="">Courses</NavLink>
+                                <NavLink to="courses">Courses</NavLink>
                             </li>
                             <li className="text-white hover:text-indigo-200">
                                 <NavLink to="booking">Booking</NavLink>
