@@ -1,11 +1,13 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const CheckOutPage = () => {
+    const checkout = useLoaderData();
+    console.log(checkout)
     return (
-        <div>
-            <div className="mt-20">
-            <h1 className="flex items-center justify-center font-bold text-violet-600 text-md lg:text-3xl">Smart Education checkout page
-            </h1>
+        <div className='bg-violet-200'>
+            <div className="pt-8">
+            <h1 className="flex items-center justify-center font-bold text-violet-600 text-md lg:text-5xl">Smart Education checkout page</h1>
         </div>
         <div className="container p-12 mx-auto">
             <div className="flex flex-col w-full px-0 mx-auto md:flex-row">
@@ -19,13 +21,13 @@ const CheckOutPage = () => {
                                     <label for="firstName" className="block mb-3 text-sm font-semibold text-gray-500">First
                                         Name</label>
                                     <input name="firstName" type="text" placeholder="First Name"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"/>
+                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-violet-600"/>
                                 </div>
                                 <div className="w-full lg:w-1/2 ">
                                     <label for="firstName" className="block mb-3 text-sm font-semibold text-gray-500">Last
                                     Name</label>
                                     <input name="Last Name" type="text" placeholder="Last Name"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"/>
+                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-violet-600"/>
                                 </div>
                             </div>
                             <div className="mt-4">
@@ -33,7 +35,7 @@ const CheckOutPage = () => {
                                     <label for="Email"
                                         className="block mb-3 text-sm font-semibold text-gray-500">Email</label>
                                     <input name="Last Name" type="text" placeholder="Email"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"/>
+                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-violet-600"/>
                                 </div>
                             </div>
                             <div className="mt-4">
@@ -41,7 +43,7 @@ const CheckOutPage = () => {
                                     <label for="Address"
                                         className="block mb-3 text-sm font-semibold text-gray-500">Address</label>
                                     <textarea
-                                        className="w-full px-4 py-3 text-xs border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
+                                        className="w-full px-4 py-3 text-xs border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-violet-600"
                                         name="Address" cols="20" rows="4" placeholder="Address"></textarea>
                                 </div>
                             </div>
@@ -50,13 +52,13 @@ const CheckOutPage = () => {
                                     <label for="city"
                                         className="block mb-3 text-sm font-semibold text-gray-500">City</label>
                                     <input name="city" type="text" placeholder="City"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"/>
+                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-violet-600"/>
                                 </div>
                                 <div className="w-full lg:w-1/2 ">
                                     <label for="postcode" className="block mb-3 text-sm font-semibold text-gray-500">
                                         Postcode</label>
                                     <input name="postcode" type="text" placeholder="Post Code"
-                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"/>
+                                        className="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-violet-600"/>
                                 </div>
                             </div>
                             <div className="flex items-center mt-4">
@@ -68,12 +70,12 @@ const CheckOutPage = () => {
                             <div className="relative pt-3 xl:pt-6"><label for="note"
                                     className="block mb-3 text-sm font-semibold text-gray-500"> Notes
                                     (Optional)</label><textarea name="note"
-                                    className="flex items-center w-full px-4 py-3 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-600"
+                                    className="flex items-center w-full px-4 py-3 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-violet-600"
                                     rows="4" placeholder="Notes for delivery"></textarea>
                             </div>
                             <div className="mt-4">
                                 <button
-                                    className="w-full px-6 py-2 text-blue-200 bg-blue-600 hover:bg-blue-900">Process</button>
+                                    className="w-full px-6 py-2 text-blue-200 bg-violet-500 hover:bg-violet-800">Process</button>
                             </div>
                         </div>
                     </form>
@@ -86,31 +88,12 @@ const CheckOutPage = () => {
                         <div className="flex flex-col space-y-4">
                                 <div className="flex space-x-4">
                                     <div>
-                                        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="image"
-                                            className="w-60"/>
+                                        <img className='w-44' src={checkout.img}/>
                                     </div>
                                     <div>
-                                        <h2 className="text-xl font-bold">Title</h2>
-                                        <p className="text-sm">Lorem ipsum dolor sit amet, tet</p>
-                                        <span className="text-red-600">Price</span> $20
-                                    </div>
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div className="flex space-x-4">
-                                    <div>
-                                    <img src="https://source.unsplash.com/collection/190727/1600x900" alt="image"
-                                            className="w-60"/>
-                                    </div>
-                                    <div>
-                                        <h2 className="text-xl font-bold">Title</h2>
-                                        <p className="text-sm">Lorem ipsum dolor sit amet, tet</p>
-                                        <span className="text-red-600">Price</span> $20
+                                        <h2 className="text-xl font-bold text-violet-800">{checkout.title}</h2>
+                                       
+                                        <span className="text-red-600">Price:</span> ${checkout.price}
                                     </div>
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
@@ -120,6 +103,7 @@ const CheckOutPage = () => {
                                         </svg>
                                     </div>
                                 </div>
+                               
                             </div>
                         </div>
                         <div className="flex p-4 mt-4">

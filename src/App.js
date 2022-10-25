@@ -28,9 +28,9 @@ function App() {
           element: <CourseDetails></CourseDetails>,
           loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
       },
-      {path:'/checkout',
-      element:<CheckOutPage></CheckOutPage>
-
+      {path:'/checkouts/:id',
+      element:<CheckOutPage></CheckOutPage>,
+      loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
 
       },
         {

@@ -45,7 +45,7 @@ const CourseDetails = () => {
           </div>
         </div>
 
-        <Link to='/checkout'><button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-500 mt-6">Get premium access</button></Link>
+        <Link to={`/checkouts/${id}`}><button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-500 mt-6">Get premium access</button></Link>
       </div>
     </div>
   );
