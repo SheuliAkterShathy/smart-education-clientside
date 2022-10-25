@@ -9,8 +9,11 @@ const Header = () => {
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
             <div>
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                   <div className='flex items-center text-white '> <NavLink to="">
-                        <h2 className="text-3xl font-bold text-white mr-3">Smart Education</h2>
+                   <div className='flex items-center text-white '> 
+                   <img className='w-10 mr-2 rounded-full' src="https://img.freepik.com/premium-vector/free-vector-flat-pen-logo-template-collection-premium-vector_620768-61.jpg?w=826" alt="" />
+                   
+                   <NavLink to="">
+                   <h2 className="text-3xl font-bold text-white mr-3">Smart Education</h2>
                     </NavLink>
                     {/* {
                         user?.displayName && <p>Name:{ user?.displayName}</p>
