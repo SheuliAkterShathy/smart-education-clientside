@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import CheckOutPage from './components/CheckOutPage/CheckOutPage';
 import CourseDetails from './components/CourseDetails/CourseDetails';
 
 import Courses from './components/Courses/Courses';
@@ -26,6 +27,11 @@ function App() {
           path: '/courses/:id',
           element: <CourseDetails></CourseDetails>,
           loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+      },
+      {path:'/checkout',
+      element:<CheckOutPage></CheckOutPage>
+
+
       },
         {
           path:'/login',
