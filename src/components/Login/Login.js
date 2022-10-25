@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/UserContext";
 
 const Login = () => {
+    const {signIn} = useContext(AuthContext);
+
+    const handleSubmit = event =>{
+        event.preventDefault();
+        const form = event.target;
+        
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password)
+
+        signIn(email,password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+        
+    }
+
+
+
   return (
     <div className="bg-violet-300 py-4">
       <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-900 text-gray-100 mx-auto">
@@ -8,7 +33,7 @@ const Login = () => {
           Login to your account
         </h2>
 
-        <form
+        <form onSubmit={handleSubmit}
           novalidate=""
           action=""
           className="space-y-8 ng-untouched ng-pristine ng-valid"
@@ -43,7 +68,7 @@ const Login = () => {
             </div>
           </div>
           <button
-            type="button"
+            type="submit"
             className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900"
           >
             Sign in
@@ -92,13 +117,13 @@ const Login = () => {
 		</button> */}
           <p className="text-sm text-center text-gray-400">
             Dont have account?
-            <a
-              href="#"
+            <Link
+              to="/register"
               rel="noopener noreferrer"
               className="focus:underline hover:underline"
             >
               Sign up here
-            </a>
+            </Link>
           </p>
         </div>
       </div>

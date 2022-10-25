@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/UserContext';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
+    const {user,logOut} = useContext(AuthContext);
+    console.log(user)
+
+   const handleSignOut = () =>{
+    logOut()
+    .then(()=>{})
+    .catch(error =>console.error(error))
+   }
+
     return (
         <div>
              <nav className="w-full bg-violet-600 shadow">
@@ -15,9 +25,7 @@ const Header = () => {
                    <NavLink to="">
                    <h2 className="text-3xl font-bold text-white mr-3">Smart Education</h2>
                     </NavLink>
-                    {/* {
-                        user?.displayName && <p>Name:{ user?.displayName}</p>
-                    } */}
+                   
                     </div>
                     <div className="md:hidden">
                         <button
@@ -85,45 +93,39 @@ const Header = () => {
                     >
                         Log in
                     </NavLink>
-                    <NavLink
-                        to="/register"
+                    {/* <NavLink
+                        to="/"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                        Register
-                        </NavLink>
+                        </NavLink> */}
                 </div>
                     </div>
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
-                    {/* {
+                    {
                         user?.uid?
-                        <button onClick={handleLogOut}>Log Out</button>:
-                        <> */}
-
-                        {/* {
-                          user?.uid?
-                          <div className='flex justify-center items-center'>
-                          <p className='text-white mr-2'>{user?.displayName}</p>
-                          <img className='rounded-full mr-2 w-10' src={user?.photoURL}/>
-                          <button onClick={handleLogOut} className='text-white hover:bg-gray-800 px-3 rounded-md py-2'>Log out</button>
-                          </div>
-                          :
-                          <> */}
-                                                  <NavLink
+                        <>
+                        <img src={user?.photoURL} alt="" />
+                        <button onClick={handleSignOut}>Log Out</button></>
+                        :
+                        <>
+                            
+                            <NavLink
                         to="/login"
                         className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Log in
                     </NavLink>
-                    <NavLink
-                        to="/register"
+                       
+                    </>}
+                    {/* <NavLink
+                        to=""
                         className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                         Register
-                    </NavLink>
-                          {/* </>
-                        } */}
-
+                    </NavLink> */}
+                         
                         {/* </>
                     } */}
                 </div>

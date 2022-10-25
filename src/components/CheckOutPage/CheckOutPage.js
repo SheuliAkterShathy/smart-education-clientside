@@ -5,7 +5,7 @@ const CheckOutPage = () => {
     const checkout = useLoaderData();
     console.log(checkout)
     return (
-        <div className='bg-violet-200'>
+        <div className='bg-violet-300'>
             <div className="pt-8">
             <h1 className="flex items-center justify-center font-bold text-violet-600 text-md lg:text-5xl">Smart Education checkout page</h1>
         </div>
