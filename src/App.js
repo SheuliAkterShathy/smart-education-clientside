@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+
 import Courses from './components/Courses/Courses';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -17,7 +18,8 @@ function App() {
         },
         {
           path:'/courses',
-          element:<Courses></Courses>
+          element:<Courses></Courses>,
+          loader: () => fetch('http://localhost:5000/courses')
         },
         {
           path:'/login',

@@ -1,48 +1,27 @@
 import React from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import Course from "../Course/Course";
 
 const Courses = () => {
+    const courses = useLoaderData();
+    console.log(courses)
   return (
-    <div className=" md:grid grid-cols-5 my-5">
-      <div className="col-span-1">
-        <ul>
-          <li>
-            <p>courses-1</p>
-            <p>courses-1</p>
-            <p>courses-1</p>
-            <p>courses-1</p>
-            <p>courses-1</p>
-            <p>courses-1</p>
-          </li>
-        </ul>
-      </div>
-
-      <div className="col-span-4 gap-4 md:flex ">
-        <div className=" mx-auto p-4 max-w-md rounded-md shadow-md bg-gray-900 text-gray-100">
-          <img
-            src="https://source.unsplash.com/random/300x300/?2"
-            alt=""
-            className="object-cover object-center w-full rounded-t-md h-60 bg-gray-500"
-          />
-          <div className="flex flex-col justify-between p-5 space-y-5">
-            <div className="space-y-1">
-              <h2 className="text-3xl font-semibold tracking-wide">
-                Donec lectus leo
-              </h2>
-              <p className="text-gray-100">
-                Curabitur luctus erat nunc, sed ullamcorper erat vestibulum
-                eget.
-              </p>
-            </div>
-            <button
-              type="button"
-              className="flex items-center justify-center w-full p-2 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900 mb-0"
-            >
-              Read more
-            </button>
-          </div>
+    <div className="md:grid grid-cols-7 p-6 gap-4 bg-violet-200">
+        <div className="col-span-2 bg-violet-300 pt-8">
+           {
+            courses.map(course=><Link><ul className="text-2xl font-bold m-3 p-4 hover:bg-violet-400 rounded-md">{course.title}</ul></Link>)
+           }
         </div>
-
-    </div>
+        <div className=" col-span-5 gap-5 md:grid grid-cols-3 ">
+         
+          {
+            courses.map(course=><Course
+                 course={course}
+                 key={course.id}
+            ></Course>)
+          }
+         
+    </div> 
     </div>
   );
 };
