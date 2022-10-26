@@ -24,6 +24,10 @@ function App() {
          element:<Home></Home>
         },
         {
+         path:'/home',
+         element:<Home></Home>
+        },
+        {
           path:'/courses',
           element:<Courses></Courses>,
           loader: () => fetch('http://localhost:5000/courses')

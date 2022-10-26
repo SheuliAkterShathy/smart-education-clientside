@@ -20,6 +20,7 @@ const UserContext = ({children}) => {
       }
 
       const updateUserProfile = (profile) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, profile);
     }
     
@@ -30,11 +31,13 @@ const UserContext = ({children}) => {
       }
 
        const signInWithGoogle = () =>{
+        setLoading(true)
         return signInWithPopup(auth,googleProvider)
        }
 
 
        const signInWithGithub = () =>{
+        setLoading(true)
         return signInWithPopup(auth,githubProvider)
        }
 

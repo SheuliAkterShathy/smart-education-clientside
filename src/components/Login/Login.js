@@ -8,7 +8,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate()
     const location = useLocation()
-
+    const from = location.state?.from?.pathname || '/'
     const handleSubmit = event =>{
         event.preventDefault();
         const form = event.target;
@@ -25,8 +25,7 @@ const Login = () => {
             form.reset('')
             toast.success('Your Login is Successful')
             setError('')
-            navigate(location?.state?.from?.pathname);
-            console.log(location.state.from)
+            navigate(from, { replace: true })
         })
         .catch(error=>{
             console.log(error);
@@ -40,6 +39,7 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             console.log(user)
+            navigate(from, { replace: true })
         })
         .catch(error=>{
             console.error(error);
@@ -52,6 +52,7 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             console.log(user)
+            navigate(from, { replace: true })
         })
         .catch(error=>{
             console.error(error);

@@ -7,13 +7,13 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const {user,logOut} = useContext(AuthContext);
-    console.log(user)
+   
 
 
-    const handleClick = event => {
+    // const handleClick = event => {
        
-        setIsActive(current => !current);
-      };
+    //     setIsActive(current => !current);
+    //   };
     
 
    const handleSignOut = () =>{
