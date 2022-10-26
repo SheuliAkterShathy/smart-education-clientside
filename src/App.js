@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import Main from './layouts/Main';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 function App() {
   const router = createBrowserRouter([
@@ -32,7 +33,7 @@ function App() {
           loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
       },
       {path:'/checkouts/:id',
-      element:<CheckOutPage></CheckOutPage>,
+      element:<PrivateRoutes><CheckOutPage></CheckOutPage></PrivateRoutes>,
       loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
 
       },
