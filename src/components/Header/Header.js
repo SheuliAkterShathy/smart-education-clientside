@@ -29,7 +29,7 @@ const Header = () => {
             <div>
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                    <div className='flex items-center text-white '> 
-                   <img className='w-10 mr-2 rounded-full' src="https://img.freepik.com/premium-vector/free-vector-flat-pen-logo-template-collection-premium-vector_620768-61.jpg?w=826" alt="" />
+                   <img className='w-10 mr-2 rounded-full bg-white' src="https://static.vecteezy.com/system/resources/thumbnails/009/457/163/small/3d-illustration-globe-book-and-abacus-for-education-png.png" alt="" />
                    
                    <NavLink to="">
                    <h2 className="text-3xl font-bold text-white mr-3">Smart Education</h2>
