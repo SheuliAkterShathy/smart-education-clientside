@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blog from './components/Blog/Blog';
 import CheckOutPage from './components/CheckOutPage/CheckOutPage';
 import CourseDetails from './components/CourseDetails/CourseDetails';
 
@@ -44,6 +45,10 @@ function App() {
         {
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/blog',
+          element:<Blog></Blog>
         }
       ]
     }

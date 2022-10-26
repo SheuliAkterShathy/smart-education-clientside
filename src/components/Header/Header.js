@@ -5,8 +5,16 @@ import { AuthContext } from '../../Contexts/UserContext';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const {user,logOut} = useContext(AuthContext);
     console.log(user)
+
+
+    const handleClick = event => {
+       
+        setIsActive(current => !current);
+      };
+    
 
    const handleSignOut = () =>{
     logOut()
@@ -80,11 +88,24 @@ const Header = () => {
                                 <NavLink to="courses">Courses</NavLink>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <NavLink to="booking">Booking</NavLink>
+                                <NavLink to="blog">Blog</NavLink>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <NavLink to="">Contact US</NavLink>
+                                <NavLink to="faq">FAQ</NavLink>
                             </li>
+
+
+                            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
+	
+	<span className="relative">
+		<input id="Toggle2" type="checkbox" className="hidden peer" />
+		<div  className="w-10 h-4 rounded-full shadow bg-gray-600 peer-checked:bg-white"></div>
+		<div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto bg-white"></div>
+	</span>
+	
+</label>
+
+
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">

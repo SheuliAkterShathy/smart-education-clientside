@@ -6,8 +6,8 @@ const CourseDetails = () => {
   console.log(course);
   const {id,title,img,description}= course;
   return (
-    <div className="py-5 bg-violet-300">
-      <div className="max-w-lg p-4 shadow-md bg-gray-800 text-gray-100 mx-auto">
+    <div className="py-5 bg-violet-300 md:grid grid-cols-2">
+      <div className="max-w-lg p-4 shadow-md bg-gray-800 text-gray-100 mx-auto ">
         <div className="flex justify-between pb-4 border-bottom">
           <div className="flex items-center">
             <a
@@ -46,6 +46,9 @@ const CourseDetails = () => {
         </div>
 
         <Link to={`/checkouts/${id}`}><button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-500 mt-6">Get premium access</button></Link>
+      </div>
+      <div className="border m-2">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo debitis ratione expedita accusamus id culpa laboriosam, ut placeat earum velit quas numquam exercitationem provident modi necessitatibus iure! Temporibus dolorem repellat molestias officiis suscipit provident incidunt, nesciunt magnam. Rerum alias est beatae tenetur. Ratione laboriosam architecto obcaecati, libero voluptate excepturi adipisci dolorum! Ullam delectus voluptas, quibusdam perspiciatis libero assumenda inventore quae.</p>
       </div>
     </div>
   );
