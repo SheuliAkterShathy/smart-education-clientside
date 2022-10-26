@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn,signInWithGoogle,signInWithGithub} = useContext(AuthContext);
+    const [error, setError] = useState('');
+
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -12,20 +15,45 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password)
+       
 
         signIn(email,password)
         .then(result=>{
             const user=result.user;
             console.log(user)
+            form.reset('')
+            toast.success('Your Login is Successful')
+            setError('')
         })
         .catch(error=>{
             console.log(error);
+            setError(error.message)
         })
         
     }
 
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then(result=>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+    }
 
 
+    const handleGithubSignIn = () =>{
+        signInWithGithub()
+        .then(result=>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+    }
   return (
     <div className="bg-violet-300 py-4">
       <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-900 text-gray-100 mx-auto">
@@ -67,11 +95,12 @@ const Login = () => {
               />
             </div>
           </div>
+          <p className="text-red-600">{error}</p>
           <button
             type="submit"
             className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900"
           >
-            Sign in
+            Log in
           </button>
         </form>
 
@@ -81,10 +110,10 @@ const Login = () => {
           <hr className="w-full text-gray-400" />
         </div>
         <div className="my-6 space-y-4">
-          <button
+          <button onClick={handleGoogleSignIn}
             aria-label="Login with Google"
             type="button"
-            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400"
+            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400 hover:bg-violet-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,10 +124,10 @@ const Login = () => {
             </svg>
             <p>Login with Google</p>
           </button>
-          <button
+          <button onClick={handleGithubSignIn}
             aria-label="Login with GitHub"
             role="button"
-            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400"
+            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400 hover:bg-violet-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +149,7 @@ const Login = () => {
             <Link
               to="/register"
               rel="noopener noreferrer"
-              className="focus:underline hover:underline"
+              className="focus:underline hover:underline text-violet-600 text-xl font-bold"
             >
               Sign up here
             </Link>

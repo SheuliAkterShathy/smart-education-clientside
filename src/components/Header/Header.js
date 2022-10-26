@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
 
+
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
     const {user,logOut} = useContext(AuthContext);
@@ -87,18 +88,25 @@ const Header = () => {
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+
+                        {
+                        user?.uid?
+                        <>
+                        <div className='flex items-center justify-center'>
+                        <img title={user?.displayName} className='w-10 rounded-full mr-2 cursor-pointer ' src={user?.photoURL} alt="" />
+                        <button className='text-white' onClick={handleSignOut}>Log Out</button>
+                        </div></>
+                        :
+                        <>
                     <NavLink
                         to="/login"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Log in
                     </NavLink>
-                    {/* <NavLink
-                        to="/"
-                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                    >
-                       Register
-                        </NavLink> */}
+                    </>
+                    }
+
                 </div>
                     </div>
                 </div>
@@ -106,8 +114,10 @@ const Header = () => {
                     {
                         user?.uid?
                         <>
-                        <img src={user?.photoURL} alt="" />
-                        <button onClick={handleSignOut}>Log Out</button></>
+                        <div className='flex items-center'>
+                        <img title={user?.displayName} className='w-10 rounded-full mr-2 cursor-pointer' src={user?.photoURL} alt="" />
+                        <button className='text-white' onClick={handleSignOut}>Log Out</button>
+                        </div></>
                         :
                         <>
                             
@@ -118,16 +128,9 @@ const Header = () => {
                         Log in
                     </NavLink>
                        
-                    </>}
-                    {/* <NavLink
-                        to=""
-                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                    >
-                        Register
-                    </NavLink> */}
-                         
-                        {/* </>
-                    } */}
+                    </>
+                    }
+
                 </div>
             </div>
         </nav>
