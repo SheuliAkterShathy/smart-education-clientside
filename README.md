@@ -1,6 +1,7 @@
 ### Website Name:Smart Education
 
 ### Website Link:
+https://smart-education-168f7.web.app
 
 ### Features and Functionality:
 - Home Page:
@@ -14,7 +15,7 @@
 
 
 - ### List of Technology: 
-I have used some technology in this website such as:-
+  I have used some technology in this website such as:-
   1.react-router-dom,
   2.firebase,
   3.hot-toast,
