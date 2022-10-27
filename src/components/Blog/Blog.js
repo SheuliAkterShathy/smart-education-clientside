@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='bg-violet-100 px-8 pt-8 text-center'>
+        <div className='px-8 pt-8 text-center'>
             <div className='mb-8 bg-violet-300 rounded-lg p-3'>
             <h2 className='text-3xl font-bold mb-3 text-violet-600'>Questions No 1: What is CORS?</h2>
             <p className='text-xl' >Answer:CORS stands for cross-origin resource sharing. Just like HTTPS, it's a protocol that defines some rules for sharing resources from a different origin. We know that modern web apps consist of two key components: a client and a server. The client requests some data from the server, and the server sends back data as a response. That means In ReactJS, CORS refers to the method that allows you to make requests to the server deployed at a different domain. As a reference, if the frontend and backend are at two different domains, we need CORS there.</p>

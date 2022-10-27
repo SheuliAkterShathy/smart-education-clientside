@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <section className="bg-violet-400 text-gray-100">
+      <section className="bg-violet text-gray-100">
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
@@ -36,7 +36,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className=" bg-violet-300 text-gray-100">
+      <section className=" text-gray-100">
         <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
           <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
             Smart Education team

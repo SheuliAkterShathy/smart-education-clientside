@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Course = ({ course }) => {
-  
+  const navigate=useNavigate()
   const { title,id, img,description } = course;
-  console.log(course)
+  const handleNavigate = () =>{
+       navigate(`/courses/${id}`)
+  }
   return (
     
-      <div className="">
-        <div className=" mx-auto p-3 max-w-md rounded-md shadow-md bg-gray-900 text-gray-100 mb-5">
+      <div className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ... cursor-pointer" onClick={handleNavigate}>
+        <div className=" mx-auto p-3 max-w-md rounded-md shadow-md bg-gray-800 text-gray-100 mb-5">
           <img
             src={img}
             alt=""
@@ -25,9 +27,9 @@ const Course = ({ course }) => {
             </div>
             <button
               type="button"
-              className="flex items-center justify-center w-full p-2 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900 mb-0 hover:bg-violet-500"
+              className="flex items-center justify-center w-full p-2 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900 mb-0 "
             >
-           <Link to={`/courses/${id}`}> Show Details</Link>
+            Show Details
             </button>
           </div>
         </div>

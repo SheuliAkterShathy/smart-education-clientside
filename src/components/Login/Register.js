@@ -29,7 +29,6 @@ const Register = () => {
             handleUpdateUserProfile(name,photoURL)
             toast.success('Registration successful')
             setError('');
-           
             navigate(from,{replace:true})
         })
         .catch(error=>{
@@ -99,7 +98,7 @@ const Register = () => {
               type="text"
               name="name"
               id="name"
-              placeholder="Sheuli Akter"
+              placeholder="Your Name"
               className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
             />
           </div>
@@ -111,7 +110,7 @@ const Register = () => {
               type="text"
               name="photoURL"
               id="photoURL"
-              placeholder=""
+              placeholder="Your photoURL"
               className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
             />
           </div>
@@ -123,7 +122,7 @@ const Register = () => {
               type="email"
               name="email"
               id="email"
-              placeholder="sheuli@gmail.com"
+              placeholder="Your email"
               className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
             />
           </div>

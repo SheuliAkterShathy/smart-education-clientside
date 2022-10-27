@@ -5,7 +5,7 @@ import { ToggleMode } from "../../layouts/Main";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
-    // const [toggle, setToggle] = useContext(ToggleMode);
+     const {toggle, setToggle} = useContext(ToggleMode);
   const { user, logOut } = useContext(AuthContext);
 
   
@@ -125,7 +125,7 @@ const Header = () => {
                     }
                     to="faq"
                   >
-                    FAQ
+                    Faq
                   </NavLink>
                 </li>
                 
@@ -135,7 +135,7 @@ const Header = () => {
                 >
                   <span className="relative">
                     <input
-                    //   onClick={() => setToggle(!toggle)}
+                      onClick={() => setToggle(!toggle)}
                       id="Toggle2"
                       type="checkbox"
                       className="hidden peer"
@@ -168,7 +168,7 @@ const Header = () => {
                   <>
                     <NavLink
                       to="/login"
-                      className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                      className="inline-block w-full px-4 py-2 text-center text-white bg-violet-700 rounded-md shadow hover:bg-violet-800"
                     >
                       Log in
                     </NavLink>
@@ -196,7 +196,7 @@ const Header = () => {
               <>
                 <NavLink
                   to="/login"
-                  className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                  className="px-4 py-2 text-white bg-violet-700 rounded-md shadow hover:bg-violet-800"
                 >
                   Log in
                 </NavLink>

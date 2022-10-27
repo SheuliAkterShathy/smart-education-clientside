@@ -56,6 +56,14 @@ const CourseDetails = () => {
             Get premium access
           </button>
         </Link>
+        <Link to='/courses'>
+          <button
+            type="button"
+            className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-500 mt-6 mb-3"
+          >
+            Go back
+          </button>
+        </Link>
       </div> 
     
     </div>

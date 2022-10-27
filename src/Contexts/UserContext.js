@@ -4,11 +4,12 @@ import app from '../firebase/firebase.config';
 
 
 export const AuthContext = createContext();
+export const ToggleMode = createContext();
 const auth = getAuth(app);
 const UserContext = ({children}) => {
       const [user,setUser] = useState(null);
       const [loading,setLoading] = useState(true);
-
+    
 
       const googleProvider = new GoogleAuthProvider();
       const githubProvider = new GithubAuthProvider();
