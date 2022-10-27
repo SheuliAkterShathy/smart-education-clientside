@@ -21,15 +21,15 @@ const Faq = () => {
 		<div className="space-y-4">
 			<details className="w-full border rounded-lg">
 				<summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">What type of course it is?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:dark:text-gray-400">Lectus iaculis orci metus vitae ligula dictum per. Nisl per nullam taciti at adipiscing est. </p>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:dark:text-gray-400"> This site is based on Information Technology.There are 6 different courses in our Smart Education institute.You can develop your skills according to your choice .   </p>
 			</details>
 			<details className="w-full border rounded-lg">
 				<summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How will you get benefits by this course?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:dark:text-gray-400">Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna porttitor egestas tincidunt neque vehicula potenti. </p>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:dark:text-gray-400">Smart Education is Eastablished in 2010.We have a better experienct to deal with students.Here are support sesson for 24/7 hours.You will get your ans within 30 minutes.We have skilled professional teachers behind this institute.</p>
 			</details>
 			<details className="w-full border rounded-lg">
 				<summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How will you admitted in this course?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:dark:text-gray-400">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:dark:text-gray-400">Our education system is 2 types.One is localbased and another one is online based.You can communicate according to your selected course based.We have facebook group page,you can communicate with us by facebook or mobile or email,instagram etc.  </p>
 			</details>
 		</div>
 	</div>

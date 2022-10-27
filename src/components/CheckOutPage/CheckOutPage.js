@@ -88,12 +88,12 @@ const CheckOutPage = () => {
                         <div className="flex flex-col space-y-4">
                                 <div className="flex space-x-4">
                                     <div>
-                                        <img className='w-44' src={checkout.img}/>
+                                        <img className='w-44' src={checkout?.img}/>
                                     </div>
                                     <div>
-                                        <h2 className="text-xl font-bold text-violet-800">{checkout.title}</h2>
+                                        <h2 className="text-xl font-bold text-violet-800">{checkout?.title}</h2>
                                        
-                                        <span className="text-red-600">Price:</span> ${checkout.price}
+                                        <span>Price:</span> ${checkout?.price}
                                     </div>
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
@@ -107,17 +107,17 @@ const CheckOutPage = () => {
                             </div>
                         </div>
                         <div className="flex p-4 mt-4">
-                            <h2 className="text-xl font-bold">ITEMS 2</h2>
+                            <h2 className="text-xl font-bold">COURSES NO: {checkout?.id}</h2>
                         </div>
                         <div
                             className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
-                            Subtotal<span className="ml-2">$40.00</span></div>
+                            Subtotal<span className="ml-2">${checkout?.price}</span></div>
                         <div
                             className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
-                            Shipping Tax<span className="ml-2">$10</span></div>
+                            Shipping Tax<span className="ml-2">$0</span></div>
                         <div
-                            className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
-                            Total<span className="ml-2">$50.00</span></div>
+                            className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0 text-red-600">
+                            Total Price: <span className="ml-2 text-red-600">${checkout?.price}</span></div>
                     </div>
                 </div>
             </div>
